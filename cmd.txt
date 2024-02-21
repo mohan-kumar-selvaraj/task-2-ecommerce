@@ -2,3 +2,6 @@
 
 "predeploy": "npm run build",
 "deploy": "gh-pages -d build",
+
+
+docker build -t frontend .

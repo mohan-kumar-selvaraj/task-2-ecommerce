@@ -16,7 +16,7 @@ app.use("/category", api);
 
 //solr
 const solrClient = new SolrNode({
-  host: "192.168.1.102",
+  host: "192.168.1.65",
   port: "8983",
   core: "fproduct",
   protocol: "http",
