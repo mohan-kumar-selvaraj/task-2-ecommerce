@@ -29,11 +29,11 @@ const Product = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let url = `http://192.168.1.65:4000/category/product/`;
+    let url = `http://localhost:4000/category/product/`;
     if (categoryName !== "AllProducts")
-      url = `http://192.168.1.65:4000/category/${categoryName}?page=${currentPage}&pageSize=5`;
+      url = `http://localhost:4000/category/${categoryName}?page=${currentPage}&pageSize=5`;
     else
-      url = `http://192.168.1.65:4000/category/product/?page=${currentPage}&pageSize=5`;
+      url = `http://localhost:4000/category/product/?page=${currentPage}&pageSize=5`;
 
     axios
       .get(url)
@@ -48,7 +48,7 @@ const Product = () => {
 
   useEffect(() => {
     axios
-      .get(`http://192.168.1.65:4000/category`)
+      .get(`http://localhost:4000/category`)
       .then((res) => {
         let cat = {
           CD_ID: 0,
@@ -66,7 +66,7 @@ const Product = () => {
   }, [categoryName]);
 
   useEffect(() => {
-    const url = `http://192.168.1.65:4000/category/search/${searchData}?page=${currentPage}&pageSize=5`;
+    const url = `http://localhost:4000/category/search/${searchData}?page=${currentPage}&pageSize=5`;
     console.log(url);
     axios
       .get(url)

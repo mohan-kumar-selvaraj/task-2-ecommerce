@@ -1,4 +1,4 @@
-// app.js
+// app.js`
 const express = require("express");
 const app = express();
 const cors = require("cors"); //cross orgin resouce sharing - restrict the sharing of resource/domain.
@@ -16,7 +16,7 @@ app.use("/category", api);
 
 //solr
 const solrClient = new SolrNode({
-  host: "192.168.1.65",
+  host: "localhost",
   port: "8983",
   core: "fproduct",
   protocol: "http",
@@ -95,7 +95,7 @@ app.get("/category/search/:searchData", (req, res) => {
       .q(`${productQuery} ${brandQuery} ${categoryQuery}`)
       .start(offset) // Set the start offset for pagination
       .rows(pageSize); // Set the number of rows to fetch
-    // console.log(query);
+    console.log(query);
     solrClient.search(query, (err, result) => {
       if (err) {
         console.error("Error executing Solr query:", err);

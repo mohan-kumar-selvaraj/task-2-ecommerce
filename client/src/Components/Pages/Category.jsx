@@ -8,7 +8,7 @@ const Category = () => {
 
   useEffect(() => {
     axios
-      .get("http://192.168.1.65:4000/category")
+      .get("http://localhost:4000/category")
       .then((res) => {
         setBodyData(res.data);
       })
